@@ -20,3 +20,4 @@ roman_numeral = input("Enter a Roman numeral: ")
 result = roman_to_int(roman_numeral)
 print(f"The integer value of {roman_numeral} is {result}.")
 
+VI = 6
