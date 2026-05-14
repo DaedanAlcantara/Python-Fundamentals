@@ -1,0 +1,51 @@
+# Tkninter Widgets and Controls
+
+import tkinter as tk
+# Create the main application window
+root = tk.Tk()
+root.title("Tkinter Basics")
+root.geometry("1200x1200")
+
+
+# Create a label widget
+label = tk.Label(root, text="Hello, Tkinter!", font=("Arial", 16))
+label.pack(pady=20)
+
+# Create a button widget
+def on_button_click():
+    label.config(text="Button Clicked!")
+button = tk.Button(root, text="Click Me", command=on_button_click)
+button.pack(pady=10)
+
+
+# Create an entry widget
+entry = tk.Entry(root)
+entry.pack(pady=10)
+
+# Create a colored section using a Frame widget
+colored_frame = tk.Frame(root, bg="lightblue", width=60, height=60, relief=tk.RIDGE, borderwidth=2)
+colored_frame.pack(pady=20) # Adjust the size of the colored section as needed
+
+# Dropdown menu (OptionMenu)
+options = ["Option 1", "Option 2", "Option 3"]
+selected_option = tk.StringVar(root)
+selected_option.set(options[0])  # Set default option
+dropdown = tk.OptionMenu(root, selected_option, *options)
+dropdown.pack(pady=10)
+
+# Create a checkbox widget
+checkbox_var = tk.BooleanVar()
+checkbox = tk.Checkbutton(root, text="Check me", variable=checkbox_var)
+checkbox.pack(pady=10)
+
+
+# Create a function to display the entered text
+def show_entry():
+    entered_text = entry.get()
+    label.config(text=f"You entered: {entered_text}")
+entry_button = tk.Button(root, text="Show Entry", command=show_entry)
+entry_button.pack(pady=10)
+
+
+# Start the main event loop
+root.mainloop()
