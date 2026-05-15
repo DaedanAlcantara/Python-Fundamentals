@@ -21,7 +21,7 @@ class TkinterReviewApp:
         # Create main window
         self.root = tk.Tk()
         self.root.title("Tkinter Complete Reviewer - All Concepts")
-        self.root.geometry("1080x1920")
+        self.root.geometry("1080x1920") # pixels for mobile-like aspect ratio
         self.root.minsize(800, 600)
         
         # Configure style for ttk
@@ -170,9 +170,10 @@ class TkinterReviewApp:
         pack_frame.grid(row=0, column=0, padx=5, pady=5, sticky="nsew")
      
         ttk.Button(pack_frame, text="Top").pack(side='top', fill='x', pady=2)
-        ttk.Button(pack_frame, text="Center").pack(expand=True)
         ttk.Button(pack_frame, text="Bottom2").pack(side='bottom', fill='x', pady=2)
         ttk.Button(pack_frame, text="Bottom").pack(side='bottom', fill='x', pady=2)
+        ttk.Label(pack_frame, text="Top Text").pack(side = 'top', pady=2)
+        ttk.Button(pack_frame, text="Center").pack(expand=True)
         ttk.Button(pack_frame, text="Left").pack(side='left', padx=2)
         ttk.Button(pack_frame, text="Right").pack(side='right', padx=2)
         
@@ -182,7 +183,8 @@ class TkinterReviewApp:
         
         # Simple login form using grid
         ttk.Label(grid_frame, text="Null Name").grid(row=0, column=0, sticky='w', padx=5, pady=2)
-        ttk.Button(grid_frame, text="Null Button").grid(row=0, column=1, padx=5, pady=2)
+        ttk.Checkbutton(grid_frame, text="Null Check").grid(row=0, column=1, padx=5, pady=2)
+        ttk.Button(grid_frame, text="Null Button").grid(row=0, column=2, padx=5, pady=2)
         ttk.Label(grid_frame, text="Username:").grid(row=1, column=0, sticky='w', padx=5, pady=2)
         ttk.Entry(grid_frame).grid(row=1, column=1, padx=5, pady=2)
         ttk.Label(grid_frame, text="Password:").grid(row=2, column=0, sticky='w', padx=5, pady=2)

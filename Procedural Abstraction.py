@@ -280,6 +280,15 @@ print("\n── SECTION 9: Lambda Functions ────────────
 # Basic lambda
 add_lambda = lambda x, y: x + y
 
+def add_def(x, y):
+    sum1 = x + y
+    return sum1
+
+def add_def(x, y):
+    sum1 = x + y ** 2
+    totalsum = sum1 + 10
+    return totalsum
+
 square     = lambda x: x ** 2
 is_even    = lambda x: x % 2 == 0
 #lamda vs def: lambda is for simple, one-line functions; def is for anything complex or reused
@@ -299,13 +308,15 @@ print(f"\n  map()  — square each: {numbers} → {squared}")
 
 
 # --- filter() ---
+
 # Creates a new list of items where lambda returns True
 evens = list(filter(lambda x: x % 2 == 0, numbers))
 print(f"  filter() — keep evens: {numbers} → {evens}")
 
 # --- reduce() ---
-# Applies a rolling computation across the list
+# Applies a rolling computation across the list (Aggregation)
 product = reduce(lambda x, y: x * y, numbers)
+
 print(f"  reduce() — multiply all: {numbers} → {product}")
 
 print("""
